@@ -37,3 +37,12 @@ fun TvProgrammeDTO.toTvProgramme() = TvProgramme(
     endTime = this.endTime ?: Date(),
     progressPercent = this.progressPercent ?: 0
 )
+
+fun List<TvProgrammeDTO>.toTvProgramme(): List<TvProgramme> {
+    var tvProgramme = mutableListOf<TvProgramme>()
+    for (tvProgrammeDTO in this) {
+        tvProgramme.add(tvProgrammeDTO.toTvProgramme())
+    }
+    return tvProgramme
+}
+
