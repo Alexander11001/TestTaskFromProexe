@@ -1,4 +1,4 @@
-package co.proexe
+package co.proexe.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

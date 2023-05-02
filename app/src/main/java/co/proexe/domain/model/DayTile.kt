@@ -1,4 +1,4 @@
-package co.proexe.domain.model.data
+package co.proexe.domain.model
 
 import androidx.annotation.StringRes
 

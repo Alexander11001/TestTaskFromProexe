@@ -1,13 +1,14 @@
-package co.proexe.domain.model.repository
+package co.proexe.data.repository
 
 import co.proexe.R
-import co.proexe.domain.model.data.DayTile
+import co.proexe.domain.model.DayTile
+import co.proexe.domain.repositories.TimeRepository
 import java.util.*
 import kotlinx.coroutines.delay
 
-class TimeRepository {
+class TimeRepositoryImpl : TimeRepository {
 
-    suspend fun getDayTiles() {
+    override suspend fun getDayTiles() {
         delay(100)
         listOf(
             DayTile(addDaysToCurrentCalendar(-2), R.string.day_before_yesterday),
@@ -18,13 +19,13 @@ class TimeRepository {
         )
     }
 
-    private fun addDaysToCurrentCalendar(amount: Int): Long {
+    override fun addDaysToCurrentCalendar(amount: Int): Long {
         val cal = getCurrentCalendar()
         cal.add(Calendar.DAY_OF_YEAR, amount)
         return cal.time.time
     }
 
-    fun getCurrentTime() = getCurrentCalendar().time
+    override fun getCurrentTime() = getCurrentCalendar().time
 
-    private fun getCurrentCalendar() = Calendar.getInstance()
+    override fun getCurrentCalendar() = Calendar.getInstance()
 }
