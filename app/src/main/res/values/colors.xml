@@ -9,4 +9,6 @@
     <color name="colorRecyclerViewTimeItemNotSelected">#FF67676D</color>
     <color name="colorText">#FFDADADA</color>
     <color name="colorStatusBar">#FF151519</color>
+    <color name="colorTextItem">#DADADA</color>
+    <color name="colorDropsItem">#D8D8D8</color>#
 </resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearRowlogo"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="@dimen/_52dp"
+            android:layout_height="@dimen/_52dp"
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription" />
+        <!--            tools:src="@drawable/img_logo"-->
+        <!--            />-->
+        <LinearLayout
+            android:id="@+id/linearInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_marginTop="@dimen/_1dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtName"
+                style="@style/txtPoppinssemibold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                tools:text="Написать текст и вынести в строки! " />
+
+            <TextView
+                android:id="@+id/txtTime"
+                style="@style/txtPoppinslight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                tools:text="Написать текст и вынести в строки! " />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <!--            <LinearLayout-->
+            <!--                android:id="@+id/linearProgress"-->
+            <!--                style="@style/groupStylewhite_A700_19cornerRadius"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="@dimen/_7pxv"-->
+            <!--                android:layout_marginEnd="@dimen/_10pxh"-->
+            <!--                android:gravity="center_horizontal"-->
+            <!--                android:orientation="vertical">-->
+
+            <!--                <View-->
+            <!--                    android:id="@+id/lineRectangleCopy"-->
+            <!--                    android:layout_width="@dimen/_201pxh"-->
+            <!--                    android:layout_height="@dimen/_3pxv"-->
+            <!--                    android:layout_gravity="start"-->
+            <!--                    android:layout_marginEnd="@dimen/_48pxh"-->
+            <!--                    android:background="@drawable/rectangle_bg_teal_300_radius_1_5" />-->
+            <!--            </LinearLayout>-->
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/imageViewDrops"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_19dp"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:layout_marginBottom="@dimen/_17dp"
+            android:contentDescription="dropMenu"
+            app:srcCompat="@drawable/ic_more_vert_white_24dp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

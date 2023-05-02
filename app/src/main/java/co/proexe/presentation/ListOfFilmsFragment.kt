@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import co.proexe.R
+import co.proexe.presentation.adapters.ProgrammeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,9 +32,14 @@ class ListOfFilmsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val recyclerView = requireActivity().findViewById<RecyclerView>(R.id.recyclerProgrammes)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        val adapter = ProgrammeAdapter()
+        recyclerView.adapter = adapter
 
         viewModel.programmes.observe(viewLifecycleOwner) {
-            //todo implement adapter
+
+            adapter.submitList(it)
         }
 
 

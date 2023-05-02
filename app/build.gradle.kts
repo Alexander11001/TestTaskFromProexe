@@ -44,6 +44,7 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
 
     //navigation
@@ -72,4 +73,7 @@ dependencies {
     // For local unit tests
     testImplementation ("com.google.dagger:hilt-android-testing:$hiltVersion")
     kaptTest ("com.google.dagger:hilt-compiler:$hiltVersion")
+
+    //glide
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
 }

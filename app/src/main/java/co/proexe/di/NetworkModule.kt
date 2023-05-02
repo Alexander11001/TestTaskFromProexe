@@ -1,6 +1,8 @@
 package co.proexe.di
 
 import co.proexe.data.api.ProgrammeApi
+import co.proexe.data.dto.DateDeserializer
+import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -9,6 +11,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 import java.util.concurrent.*
 
 @Module
@@ -16,6 +19,10 @@ import java.util.concurrent.*
 class NetworkModule {
 
     private val BASE_URL = "https://www.jsonkeeper.com/b/"
+
+    val gson = GsonBuilder()
+        .registerTypeAdapter(Date::class.java, DateDeserializer())
+        .create()
 
     //add logininterceptor and httpclient
 
@@ -41,7 +48,7 @@ class NetworkModule {
         return Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ProgrammeApi::class.java)
     }

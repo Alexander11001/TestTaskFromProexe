@@ -18,9 +18,9 @@ data class TvProgrammeDTO(
     val category: TvProgrammeCategory?,
     @SerializedName("isFavourite")
     val isFavourite: Boolean?,
-    @SerializedName("startTime")
+    @SerializedName("startTimeDateRaw")
     val startTime: Date?,
-    @SerializedName("endTime")
+    @SerializedName("endTimeDateRaw")
     val endTime: Date?,
     @SerializedName("progressPercent")
     val progressPercent: Int?
@@ -39,7 +39,7 @@ fun TvProgrammeDTO.toTvProgramme() = TvProgramme(
 )
 
 fun List<TvProgrammeDTO>.toTvProgramme(): List<TvProgramme> {
-    var tvProgramme = mutableListOf<TvProgramme>()
+    val tvProgramme = mutableListOf<TvProgramme>()
     for (tvProgrammeDTO in this) {
         tvProgramme.add(tvProgrammeDTO.toTvProgramme())
     }
