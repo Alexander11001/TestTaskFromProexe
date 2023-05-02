@@ -37,10 +37,19 @@ android {
 }
 
 dependencies {
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20")
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+
+    //navigation
+    val navigationVersion = "2.5.3"
+    implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
 
     //retrofit
     val retrofitVersion = "2.9.0"
