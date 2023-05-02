@@ -1,6 +1,5 @@
 package co.proexe.presentation
 
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -38,8 +37,18 @@ class ListOfFilmsFragment : Fragment() {
         recyclerView.adapter = adapter
 
         viewModel.programmes.observe(viewLifecycleOwner) {
+//            adapter.submitList(it)
+            adapter.submitList(viewModel.programmes.value?.let { viewModel.sortProgrammes(it) })
+        }
 
-            adapter.submitList(it)
+        adapter.setOnLongClickListener { tvProgramme ->
+            if (viewModel.sharedPreferencesUtil.isProgrammeFavorite(tvProgramme.id)) {
+                viewModel.removeProgrammeFromFavorites(tvProgramme.id)
+            } else {
+                viewModel.addProgrammeToFavorites(tvProgramme.id)
+            }
+            // Refresh the list
+            adapter.submitList(viewModel.programmes.value?.let { viewModel.sortProgrammes(it) })
         }
     }
 }

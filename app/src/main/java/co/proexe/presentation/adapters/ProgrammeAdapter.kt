@@ -14,9 +14,15 @@ import co.proexe.data.infrastructure.convertToString
 import co.proexe.data.infrastructure.loadImage
 import co.proexe.domain.model.TvProgramme
 
-
 class ProgrammeAdapter :
     ListAdapter<TvProgramme, ProgrammeAdapter.ItemViewHolder>(ItemDiffCallback()) {
+
+    private var onLongClickListener: ((TvProgramme) -> Unit)? = null
+
+    fun setOnLongClickListener(listener: (TvProgramme) -> Unit) {
+        onLongClickListener = listener
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val view =
@@ -30,18 +36,24 @@ class ProgrammeAdapter :
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        init {
+            itemView.setOnLongClickListener {
+                onLongClickListener?.invoke(getItem(adapterPosition))
+                true
+            }
+        }
+
         fun bind(item: TvProgramme) {
             val programmeName = itemView.findViewById<TextView>(R.id.txtName)
             val programmeTime = itemView.findViewById<TextView>(R.id.txtTime)
             val programmeImage = itemView.findViewById<ImageView>(R.id.imageLogo)
             val progressBar = itemView.findViewById<ProgressBar>(R.id.progressBar)
 
-
-
             programmeName.text = item.title
             programmeImage.loadImage(item.imageUrl)
             progressBar.setProgress(item.progressPercent, true)
-            programmeTime.text = item.startTime.convertToString() + " - " + item.endTime.convertToString() + " | " + item.type
+            programmeTime.text =
+                item.startTime.convertToString() + " - " + item.endTime.convertToString() + " | " + item.type
         }
     }
 

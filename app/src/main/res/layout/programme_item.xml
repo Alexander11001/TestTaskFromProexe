@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="4dp">
+    android:background="@color/colorRecyclerViewChannelBackground"
+    >
 
     <LinearLayout
         android:id="@+id/linearRowlogo"
@@ -20,10 +21,12 @@
             android:id="@+id/imageLogo"
             android:layout_width="@dimen/_52dp"
             android:layout_height="@dimen/_52dp"
-            android:scaleType="fitXY"
-            tools:ignore="ContentDescription"
             android:layout_marginTop="@dimen/_12dp"
-            android:layout_marginEnd="@dimen/_11dp" />
+            android:layout_marginEnd="@dimen/_11dp"
+            android:scaleType="fitXY"
+            android:layout_marginStart="@dimen/_14dp"
+            tools:ignore="ContentDescription" />
+
         <LinearLayout
             android:id="@+id/linearInfo"
             android:layout_width="0dp"
@@ -61,31 +64,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8dp"
-                android:layout_marginEnd="@dimen/_11dp"
+                android:layout_marginEnd="@dimen/_11dp" />
 
-                />
-
-
-            <!--            <LinearLayout-->
-            <!--                android:id="@+id/linearProgress"-->
-            <!--                style="@style/groupStylewhite_A700_19cornerRadius"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginTop="@dimen/_7pxv"-->
-            <!--                android:layout_marginEnd="@dimen/_10pxh"-->
-            <!--                android:gravity="center_horizontal"-->
-            <!--                android:orientation="vertical">-->
-
-            <!--                <View-->
-            <!--                    android:id="@+id/lineRectangleCopy"-->
-            <!--                    android:layout_width="@dimen/_201pxh"-->
-            <!--                    android:layout_height="@dimen/_3pxv"-->
-            <!--                    android:layout_gravity="start"-->
-            <!--                    android:layout_marginEnd="@dimen/_48pxh"-->
-            <!--                    android:background="@drawable/rectangle_bg_teal_300_radius_1_5" />-->
-            <!--            </LinearLayout>-->
         </LinearLayout>
-
 
         <ImageView
             android:id="@+id/imageViewDrops"
@@ -97,5 +78,21 @@
             android:contentDescription="dropMenu"
             app:srcCompat="@drawable/ic_more_vert_white_24dp" />
 
+
+
     </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorRecyclerViewTimeItemNotSelected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearRowlogo"
+        android:layout_marginTop="@dimen/_10dp"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
