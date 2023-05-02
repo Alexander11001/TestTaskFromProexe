@@ -12,4 +12,6 @@
     <dimen name="_11dp">11dp</dimen>
     <dimen name="_8dp">8dp</dimen>
     <dimen name="_6dp">6dp</dimen>
+    <dimen name="_44dp">44dp</dimen>
+
 </resources>

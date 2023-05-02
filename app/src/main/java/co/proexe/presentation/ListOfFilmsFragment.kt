@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import co.proexe.R
+import co.proexe.presentation.adapters.DateAdapter
 import co.proexe.presentation.adapters.ProgrammeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -40,6 +41,21 @@ class ListOfFilmsFragment : Fragment() {
 //            adapter.submitList(it)
             adapter.submitList(viewModel.programmes.value?.let { viewModel.sortProgrammes(it) })
         }
+
+        val horizontalRecyclerView =
+            requireActivity().findViewById<RecyclerView>(R.id.horizontalRecyclerDate)
+        horizontalRecyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        horizontalRecyclerView.scrollToPosition(Integer.MAX_VALUE / 2)
+        val daysOfWeek =
+            listOf("poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela")
+        val dateAdapter = DateAdapter(daysOfWeek)
+        horizontalRecyclerView.adapter = dateAdapter
+
+
+
+
+
 
         adapter.setOnLongClickListener { tvProgramme ->
             if (viewModel.sharedPreferencesUtil.isProgrammeFavorite(tvProgramme.id)) {
