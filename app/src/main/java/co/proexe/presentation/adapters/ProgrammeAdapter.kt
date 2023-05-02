@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import co.proexe.R
+import co.proexe.data.infrastructure.convertToString
 import co.proexe.data.infrastructure.loadImage
 import co.proexe.domain.model.TvProgramme
 
@@ -34,10 +35,13 @@ class ProgrammeAdapter :
             val programmeTime = itemView.findViewById<TextView>(R.id.txtTime)
             val programmeImage = itemView.findViewById<ImageView>(R.id.imageLogo)
             val progressBar = itemView.findViewById<ProgressBar>(R.id.progressBar)
+
+
+
             programmeName.text = item.title
             programmeImage.loadImage(item.imageUrl)
             progressBar.setProgress(item.progressPercent, true)
-//            programmeTime.text = "$item.st
+            programmeTime.text = item.startTime.convertToString() + " - " + item.endTime.convertToString() + " | " + item.type
         }
     }
 

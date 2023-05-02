@@ -9,4 +9,6 @@
     <dimen name="_16dp">16dp</dimen>
     <dimen name="_17dp">17dp</dimen>
     <dimen name="_0dp">0dp</dimen>
+    <dimen name="_11dp">11dp</dimen>
+    <dimen name="_8dp">8dp</dimen>
 </resources>

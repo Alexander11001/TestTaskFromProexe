@@ -41,8 +41,5 @@ class ListOfFilmsFragment : Fragment() {
 
             adapter.submitList(it)
         }
-
-
     }
-
 }

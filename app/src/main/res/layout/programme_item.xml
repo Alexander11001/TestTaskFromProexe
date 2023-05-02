@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingBottom="4dp">
 
     <LinearLayout
         android:id="@+id/linearRowlogo"
@@ -20,9 +21,9 @@
             android:layout_width="@dimen/_52dp"
             android:layout_height="@dimen/_52dp"
             android:scaleType="fitXY"
-            tools:ignore="ContentDescription" />
-        <!--            tools:src="@drawable/img_logo"-->
-        <!--            />-->
+            tools:ignore="ContentDescription"
+            android:layout_marginTop="@dimen/_12dp"
+            android:layout_marginEnd="@dimen/_11dp" />
         <LinearLayout
             android:id="@+id/linearInfo"
             android:layout_width="0dp"
@@ -58,7 +59,11 @@
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:layout_marginEnd="@dimen/_11dp"
+
+                />
 
 
             <!--            <LinearLayout-->
