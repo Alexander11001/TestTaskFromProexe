@@ -10,7 +10,6 @@ fun ImageView.loadImage(url: String) {
         .load(url)
         .into(this@loadImage)
 }
-
 fun Date.convertToString(): String {
     val localTimeZone = TimeZone.getDefault()
     val outputDateFormat = SimpleDateFormat("HH:mm")

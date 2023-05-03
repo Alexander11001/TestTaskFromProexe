@@ -21,6 +21,6 @@ class SharedPreferencesUtil(private val sharedPreferences: SharedPreferences) {
     }
 
     companion object {
-        private const val FAVORITE_PROGRAMS_KEY = "favorite_programs"
+        const val FAVORITE_PROGRAMS_KEY = "favorite_programs"
     }
 }

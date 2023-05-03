@@ -3,8 +3,6 @@ package co.proexe.presentation
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
@@ -18,13 +16,9 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ListOfFilmsFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ListOfFilmsFragment()
-    }
-
     private val viewModel: ListOfFilmsViewModel by viewModels()
 
-    //todo ImplementViewBinding
+    //TODO ImplementViewBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,8 +43,7 @@ class ListOfFilmsFragment : Fragment() {
         horizontalRecyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         horizontalRecyclerView.scrollToPosition(Integer.MAX_VALUE / 2)
-        val daysOfWeek =
-            listOf("poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela")
+        val daysOfWeek = generateDaysofWeek()
         val dateAdapter = DateAdapter(daysOfWeek)
         horizontalRecyclerView.adapter = dateAdapter
 
@@ -63,5 +56,17 @@ class ListOfFilmsFragment : Fragment() {
             // Refresh the list
             adapter.submitList(viewModel.programmes.value?.let { viewModel.sortProgrammes(it) })
         }
+    }
+
+    private fun generateDaysofWeek(): List<String> {
+        return listOf(
+            "poniedziałek",
+            "wtorek",
+            "środa",
+            "czwartek",
+            "piątek",
+            "sobota",
+            "niedziela"
+        )
     }
 }
