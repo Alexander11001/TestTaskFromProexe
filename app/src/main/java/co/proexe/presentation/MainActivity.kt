@@ -1,23 +1,27 @@
 package co.proexe.presentation
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
-import co.proexe.R
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(co.proexe.R.layout.activity_main)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+            supportFragmentManager.findFragmentById(co.proexe.R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
 
+//        val toolbar: Toolbar = findViewById(co.proexe.R.id.toolbar)
+//        setSupportActionBar(toolbar)
     }
+
+
 }

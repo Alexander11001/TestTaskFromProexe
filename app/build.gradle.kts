@@ -1,9 +1,7 @@
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
-
 plugins {
     id("com.android.application")
     kotlin("android")
-    id("com.google.dagger.hilt.android") // version "2.45" apply false
+    id("com.google.dagger.hilt.android")
     kotlin("kapt")
 }
 
@@ -76,4 +74,22 @@ dependencies {
 
     //glide
     implementation ("com.github.bumptech.glide:glide:4.15.1")
+
+    // AndroidX Test
+    androidTestImplementation ("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
+
+    //Mockito
+    androidTestImplementation ("org.mockito.kotlin:mockito-kotlin:3.2.0")
+    androidTestImplementation ("org.mockito:mockito-android:3.8.0")
+
+    androidTestImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+    androidTestImplementation ("androidx.arch.core:core-testing:2.2.0")
+
+    androidTestImplementation ("androidx.test:core:1.6.0-alpha01")
+
+    androidTestImplementation ("com.google.truth:truth:1.1.3")
+    androidTestImplementation ("androidx.test:runner:1.5.2")
+
+
 }

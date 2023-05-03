@@ -3,6 +3,8 @@ package co.proexe.presentation
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
@@ -51,11 +53,6 @@ class ListOfFilmsFragment : Fragment() {
             listOf("poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela")
         val dateAdapter = DateAdapter(daysOfWeek)
         horizontalRecyclerView.adapter = dateAdapter
-
-
-
-
-
 
         adapter.setOnLongClickListener { tvProgramme ->
             if (viewModel.sharedPreferencesUtil.isProgrammeFavorite(tvProgramme.id)) {

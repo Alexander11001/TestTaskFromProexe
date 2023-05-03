@@ -13,5 +13,7 @@
     <dimen name="_8dp">8dp</dimen>
     <dimen name="_6dp">6dp</dimen>
     <dimen name="_44dp">44dp</dimen>
+    <dimen name="_18dp">18dp</dimen>
+    <dimen name="_20dp">20dp</dimen>
 
 </resources>

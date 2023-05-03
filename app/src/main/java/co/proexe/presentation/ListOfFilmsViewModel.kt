@@ -27,7 +27,7 @@ class ListOfFilmsViewModel @Inject constructor(
         fetchProgrammes()
     }
 
-    private fun fetchProgrammes() {
+    fun fetchProgrammes() {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 val result = networkRepository.getProgrammesList()

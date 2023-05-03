@@ -6,6 +6,12 @@
     android:orientation="vertical"
     tools:context=".presentation.ListOfFilmsFragment">
 
+    <include
+        android:id="@+id/toolbar_main"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/horizontalRecyclerDate"
         android:layout_width="match_parent"

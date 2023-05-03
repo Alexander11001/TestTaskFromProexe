@@ -24,8 +24,6 @@ class NetworkModule {
         .registerTypeAdapter(Date::class.java, DateDeserializer())
         .create()
 
-    //add logininterceptor and httpclient
-
     @Provides
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         val loggingInterceptor = HttpLoggingInterceptor()
